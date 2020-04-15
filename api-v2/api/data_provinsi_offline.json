@@ -1,0 +1,308 @@
+[
+    {
+        "FID": 11,
+        "Kode_Provi": 31,
+        "Provinsi": "DKI Jakarta",
+        "kordinat": {
+            "lat": -6.1753942,
+            "lng": 106.827183
+        }
+    },
+    {
+        "FID": 12,
+        "Kode_Provi": 32,
+        "Provinsi": "Jawa Barat",
+        "kordinat": {
+            "lat": -6.8891904,
+            "lng": 107.6404716
+        }
+    },
+    {
+        "FID": 15,
+        "Kode_Provi": 35,
+        "Provinsi": "Jawa Timur",
+        "kordinat": {
+            "lat": -7.6977397,
+            "lng": 112.4914199
+        }
+    },
+    {
+        "FID": 16,
+        "Kode_Provi": 36,
+        "Provinsi": "Banten",
+        "kordinat": {
+            "lat": -6.405817,
+            "lng": 106.064018
+        }
+    },
+    {
+        "FID": 13,
+        "Kode_Provi": 33,
+        "Provinsi": "Jawa Tengah",
+        "kordinat": {
+            "lat": -7.150975,
+            "lng": 110.140259
+        }
+    },
+    {
+        "FID": 27,
+        "Kode_Provi": 73,
+        "Provinsi": "Sulawesi Selatan",
+        "kordinat": {
+            "lat": -3.6446718,
+            "lng": 119.9471906
+        }
+    },
+    {
+        "FID": 17,
+        "Kode_Provi": 51,
+        "Provinsi": "Bali",
+        "kordinat": {
+            "lat": -8.340539,
+            "lng": 115.091949
+        }
+    },
+    {
+        "FID": 2,
+        "Kode_Provi": 12,
+        "Provinsi": "Sumatera Utara",
+        "kordinat": {
+            "lat": 2.1923519,
+            "lng": 99.3812201
+        }
+    },
+    {
+        "FID": 33,
+        "Kode_Provi": 94,
+        "Provinsi": "Papua",
+        "kordinat": {
+            "lat": -4.269928,
+            "lng": 138.080353
+        }
+    },
+    {
+        "FID": 14,
+        "Kode_Provi": 34,
+        "Provinsi": "Daerah Istimewa Yogyakarta",
+        "kordinat": {
+            "lat": -7.9778384,
+            "lng": 110.3672257
+        }
+    },
+    {
+        "FID": 3,
+        "Kode_Provi": 13,
+        "Provinsi": "Sumatera Barat",
+        "kordinat": {
+            "lat": -1.3358903,
+            "lng": 100.0722276
+        }
+    },
+    {
+        "FID": 18,
+        "Kode_Provi": 52,
+        "Provinsi": "Nusa Tenggara Barat",
+        "kordinat": {
+            "lat": -8.7892855,
+            "lng": 117.146169
+        }
+    },
+    {
+        "FID": 22,
+        "Kode_Provi": 63,
+        "Provinsi": "Kalimantan Selatan",
+        "kordinat": {
+            "lat": -2.9285686,
+            "lng": 115.3700718
+        }
+    },
+    {
+        "FID": 23,
+        "Kode_Provi": 64,
+        "Provinsi": "Kalimantan Timur",
+        "kordinat": {
+            "lat": 0.7884397,
+            "lng": 116.2419977
+        }
+    },
+    {
+        "FID": 10,
+        "Kode_Provi": 21,
+        "Provinsi": "Kepulauan Riau",
+        "kordinat": {
+            "lat": -0.1547846,
+            "lng": 104.5803745
+        }
+    },
+    {
+        "FID": 21,
+        "Kode_Provi": 62,
+        "Provinsi": "Kalimantan Tengah",
+        "kordinat": {
+            "lat": -1.499583,
+            "lng": 113.2903307
+        }
+    },
+    {
+        "FID": 9,
+        "Kode_Provi": 18,
+        "Provinsi": "Lampung",
+        "kordinat": {
+            "lat": -4.8555039,
+            "lng": 105.0272986
+        }
+    },
+    {
+        "FID": 4,
+        "Kode_Provi": 14,
+        "Provinsi": "Riau",
+        "kordinat": {
+            "lat": 0.9400084,
+            "lng": 101.6556177
+        }
+    },
+    {
+        "FID": 26,
+        "Kode_Provi": 72,
+        "Provinsi": "Sulawesi Tengah",
+        "kordinat": {
+            "lat": -1.6937786,
+            "lng": 120.8088555
+        }
+    },
+    {
+        "FID": 6,
+        "Kode_Provi": 16,
+        "Provinsi": "Sumatera Selatan",
+        "kordinat": {
+            "lat": -3.1266842,
+            "lng": 104.0930554
+        }
+    },
+    {
+        "FID": 25,
+        "Kode_Provi": 71,
+        "Provinsi": "Sulawesi Utara",
+        "kordinat": {
+            "lat": 0.6555692,
+            "lng": 124.090151
+        }
+    },
+    {
+        "FID": 24,
+        "Kode_Provi": 65,
+        "Provinsi": "Kalimantan Utara",
+        "kordinat": {
+            "lat": 3.0235817,
+            "lng": 116.2049306
+        }
+    },
+    {
+        "FID": 28,
+        "Kode_Provi": 74,
+        "Provinsi": "Sulawesi Tenggara",
+        "kordinat": {
+            "lat": -3.5491199,
+            "lng": 121.7279646
+        }
+    },
+    {
+        "FID": 20,
+        "Kode_Provi": 61,
+        "Provinsi": "Kalimantan Barat",
+        "kordinat": {
+            "lat": -0.1322387,
+            "lng": 111.0968901
+        }
+    },
+    {
+        "FID": 31,
+        "Kode_Provi": 81,
+        "Provinsi": "Maluku",
+        "kordinat": {
+            "lat": -5.3580518,
+            "lng": 130.3583823
+        }
+    },
+    {
+        "FID": 1,
+        "Kode_Provi": 11,
+        "Provinsi": "Aceh",
+        "kordinat": {
+            "lat": 4.3685491,
+            "lng": 97.0253024
+        }
+    },
+    {
+        "FID": 5,
+        "Kode_Provi": 15,
+        "Provinsi": "Jambi",
+        "kordinat": {
+            "lat": -1.611572,
+            "lng": 102.779699
+        }
+    },
+    {
+        "FID": 30,
+        "Kode_Provi": 76,
+        "Provinsi": "Sulawesi Barat",
+        "kordinat": {
+            "lat": -2.4974546,
+            "lng": 119.3918955
+        }
+    },
+    {
+        "FID": 7,
+        "Kode_Provi": 17,
+        "Provinsi": "Bengkulu",
+        "kordinat": {
+            "lat": -3.5186763,
+            "lng": 102.5359834
+        }
+    },
+    {
+        "FID": 8,
+        "Kode_Provi": 19,
+        "Provinsi": "Kepulauan Bangka Belitung",
+        "kordinat": {
+            "lat": -2.532904,
+            "lng": 107.5757137
+        }
+    },
+    {
+        "FID": 32,
+        "Kode_Provi": 82,
+        "Provinsi": "Maluku Utara",
+        "kordinat": {
+            "lat": 0.6301215,
+            "lng": 127.9720219
+        }
+    },
+    {
+        "FID": 34,
+        "Kode_Provi": 91,
+        "Provinsi": "Papua Barat",
+        "kordinat": {
+            "lat": -1.3842356,
+            "lng": 132.902528
+        }
+    },
+    {
+        "FID": 19,
+        "Kode_Provi": 53,
+        "Provinsi": "Nusa Tenggara Timur",
+        "kordinat": {
+            "lat": -8.5656787,
+            "lng": 120.6978581
+        }
+    },
+    {
+        "FID": 29,
+        "Kode_Provi": 75,
+        "Provinsi": "Gorontalo",
+        "kordinat": {
+            "lat": 0.7186174,
+            "lng": 122.4555927
+        }
+    }
+]
