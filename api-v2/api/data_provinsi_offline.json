@@ -6,7 +6,8 @@
         "kordinat": {
             "lat": -6.1753942,
             "lng": 106.827183
-        }
+        },
+        "situs":"https://corona.jakarta.go.id/peta"
     },
     {
         "FID": 12,
@@ -15,7 +16,8 @@
         "kordinat": {
             "lat": -6.8891904,
             "lng": 107.6404716
-        }
+        },
+        "situs": "https://pikobar.jabarprov.go.id/"
     },
     {
         "FID": 15,
@@ -24,7 +26,8 @@
         "kordinat": {
             "lat": -7.6977397,
             "lng": 112.4914199
-        }
+        },
+        "situs": "infocovid19.jatimprov.go.id/"
     },
     {
         "FID": 16,
@@ -33,7 +36,8 @@
         "kordinat": {
             "lat": -6.405817,
             "lng": 106.064018
-        }
+        },
+        "situs": "infocorona.bantenprov.go.id"
     },
     {
         "FID": 13,
@@ -42,7 +46,8 @@
         "kordinat": {
             "lat": -7.150975,
             "lng": 110.140259
-        }
+        },
+        "situs":"corona.jatengprov.go.id/"
     },
     {
         "FID": 27,
@@ -51,7 +56,8 @@
         "kordinat": {
             "lat": -3.6446718,
             "lng": 119.9471906
-        }
+        },
+        "situs": "covid19.sulselprov.go.id/"
     },
     {
         "FID": 17,
@@ -87,7 +93,8 @@
         "kordinat": {
             "lat": -7.9778384,
             "lng": 110.3672257
-        }
+        },
+        "situs": "http://corona.jogjaprov.go.id/map-covid-19-diy"
     },
     {
         "FID": 3,
@@ -96,7 +103,8 @@
         "kordinat": {
             "lat": -1.3358903,
             "lng": 100.0722276
-        }
+        },
+        "situs": "http://corona.sumbarprov.go.id/"
     },
     {
         "FID": 18,
@@ -105,7 +113,8 @@
         "kordinat": {
             "lat": -8.7892855,
             "lng": 117.146169
-        }
+        },
+        "situs": "corona.ntbprov.go.id/"
     },
     {
         "FID": 22,
@@ -132,7 +141,8 @@
         "kordinat": {
             "lat": -0.1547846,
             "lng": 104.5803745
-        }
+        },
+        "situs": "corona.kepriprov.go.id/"
     },
     {
         "FID": 21,
@@ -150,7 +160,8 @@
         "kordinat": {
             "lat": -4.8555039,
             "lng": 105.0272986
-        }
+        },
+        "situs": "geoportal.lampungprov.go.id/corona/"
     },
     {
         "FID": 4,
@@ -159,7 +170,8 @@
         "kordinat": {
             "lat": 0.9400084,
             "lng": 101.6556177
-        }
+        },
+        "situs": "corona.riau.go.id/"
     },
     {
         "FID": 26,
@@ -177,7 +189,8 @@
         "kordinat": {
             "lat": -3.1266842,
             "lng": 104.0930554
-        }
+        },
+        "situs": "corona.sumselprov.go.id/"
     },
     {
         "FID": 25,
@@ -186,7 +199,8 @@
         "kordinat": {
             "lat": 0.6555692,
             "lng": 124.090151
-        }
+        },
+        "situs": "corona.sulutprov.go.id/"
     },
     {
         "FID": 24,
@@ -213,7 +227,8 @@
         "kordinat": {
             "lat": -0.1322387,
             "lng": 111.0968901
-        }
+        },
+        "situs": "dinkes.kalbarprov.go.id/covid-19/"
     },
     {
         "FID": 31,
@@ -231,7 +246,8 @@
         "kordinat": {
             "lat": 4.3685491,
             "lng": 97.0253024
-        }
+        },
+        "situs": "infocorona.bantenprov.go.id"
     },
     {
         "FID": 5,

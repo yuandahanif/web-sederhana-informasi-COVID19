@@ -1,451 +1,357 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Informasi COVID-19 Indonesia</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Informasi COVID-19 Indonesia</title>
 
-  <!-- CSS  -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
-  integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
-  crossorigin=""/>
-  <link rel="stylesheet" type="text/css" href="css/my_style.css">
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link rel="stylesheet" href="css/leaflet.css" />
+    <link rel="stylesheet" type="text/css" href="css/my_style.css">
 
-  <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
-  integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
-  crossorigin="" defer></script>
+    <!--  Scripts-->
+    <script src="js/jquery-2.1.1.min.js" defer></script>
+    <script src="js/materialize.js" defer></script>
+    <script src="js/leaflet.js" defer></script>
+    <script src="js/init.js" defer></script>
+    <script src="js/index.js" type="module" defer></script>
 </head>
+
 <body>
-  <!-- navbar -->
-  <div class="navbar-fixed">
-    <nav class="white" role="navigation">
-      <div class="nav-wrapper container">
-        <a id="logo-container" href="#" class="brand-logo">info covid-19</a>
-        <ul class="right hide-on-med-and-down">
-          <li><a href="#">Beranda</a></li>
-          <li><a href="#">Rs Rujukan</a></li>
-          <li><a href="#">Hotline</a></li>
-          <li><a href="#">Berita</a></li>
-          <li><a href="#">Tentang</a></li>
+    <!-- navbar -->
+    <nav-fixed>
+        <ul>
+            <li><a href="#">Beranda</a></li>
+            <li><a href="#">Rs Rujukan</a></li>
+            <li><a href="#">Hotline</a></li>
+            <li><a href="#">Berita</a></li>
+            <li><a href="#">Tentang</a></li>
         </ul>
+    </nav-fixed>
 
-        
-        <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-      </div>
-    </nav>
-  </div>
-  <ul id="nav-mobile" class="sidenav">
-    <li><a href="#">Beranda</a></li>
-    <li><a href="#">Rs Rujukan</a></li>
-    <li><a href="#">Hotline</a></li>
-    <li><a href="#">Berita</a></li>
-    <li><a href="#">Tentang</a></li>
-  </ul>
-
-  <!-- landing -->
-  <main class="section no-pad-bot no-pad-top">
-    <!-- <div class=""> -->
+    <!-- landing -->
+    <main class="section no-pad-bot no-pad-top">
         <div class="atas parallax-container">
-        <div class="container">
-            <div class="landing-text row white-text">
+            <div class="container">
+                <div class="landing-text row white-text">
+                    <div class="col s12">
+                        <h1 class="white-text">Indonesia <span class="semi-bold red-text accent-3">Bersatu</span></h1>
+                    </div>
+                    <div class="col s12">
+                        <h2 class="semi-bold white-text">#bersamamelawancorona</h2>
+                    </div>
+                    <div class="col s12">
+                        <h6 class="light line-height-1 white-text">Tetap waspada jaga kesehatan, jaga kebersihan, dan jaga jarak.</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="parallax"><img src="./images/bg.JPG"></div>
+        </div>
+
+        <div class="container-90-m5 z-depth-3">
+            <div class="bawah row">
                 <div class="col s12">
-                    <h1 class="white-text">Indonesia <span class="semi-bold red-text accent-3">Bersatu</span></h1>
+                    <div class="row">
+                        <div class="col s12 m12 l6">
+                            <div class="video-container">
+                                <iframe width="100%" src="https://www.youtube.com/embed/UHgNNfazmjY" frameborder="0"
+                                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen></iframe>
+                            </div>
+                        </div>
+                        <div class="col s12 m12 l6">
+                            <h3 class="judul semi-bold">Apa Itu <span class="text-red">COVID-19</span>?</h3>
+                            <p>Corona Virus Disease 2019 atau COVID-19 adalah penyakit menular yang disebabkan oleh
+                                SARS-CoV-2, salah satu jenis koronavirus. Penderita COVID-19 dapat mengalami demam, batuk kering,
+                                dan kesulitan bernafas.
+                                <span class="br"></span>
+                                Infeksi menyebar dari satu orang ke orang lain melalui percikan (droplet) dari saluran
+                                pernapasan yang sering dihasilkan saat batuk atau bersin. Jarak jangkauan droplet
+                                biasanya hingga 1 meter. Droplet bisa menempel di benda, 
+                                namun tidak akan bertahan lama di udara. 
+                                Waktu dari paparan virus hingga timbulnya gejala klinis antara 1-14 hari dengan rata-rata 5 hari. 
+                                Maka, bagi orang yang sedang sakit diwajibkan memakai masker guna meminimalisir penyebaran droplet.</p>
+                        </div>
+                    </div>
+
                 </div>
                 <div class="col s12">
-                    <h2 class="semi-bold white-text">#bersamamelawancorona</h2>
-                </div>
-                <div class="col s12">
-                    <h6 class="light line-height-1 white-text">Tetap waspada jaga kesehatan, jaga kebersihan, dan jaga
-                        jarak.</h6>
+                    <h3 class="judul semi-bold mb-1">Ayo lindongi diri dari <span
+                            class='judul text-red'>COVID-19</span>!</h3>
+                    <div class="row">
+                        <div class="row">
+                            <div class="col s12 m4">
+                                <div class="icon-block">
+                                    <div class=" mx-auto w-100px"><img class="responsive-img" height="10"
+                                            src="./images/cough.svg"></div>
+                                    <h6 class="center">Terapkan etika batuk atau bersin (dengan menutup mulut dan hidung), dan jangan meludah sembarangan.</h6>
+
+                                </div>
+                            </div>
+
+                            <div class="col s12 m4">
+                                <div class="icon-block">
+                                    <div class=" mx-auto w-100px"><img class="responsive-img" height="10"
+                                            src="./images/cleaning-thing.svg"></div>
+                                    <h6 class="center">Bersihkan benda yang sering disentuh</h6>
+                                </div>
+                            </div>
+
+                            <div class="col s12 m4">
+                                <div class="icon-block">
+                                    <div class=" mx-auto w-100px"><img class="responsive-img" height="10"
+                                            src="./images/hospital.svg"></div>
+                                    <h6 class="center">Gunakan masker jika Anda sakit dan segera periksakan diri ke fasilitas kesehatan terdekat</h6>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col s12 m4">
+                                <div class="icon-block">
+                                    <div class=" mx-auto w-100px"><img class="responsive-img"
+                                            src="./images/wash hand.svg">
+                                    </div>
+                                    <h6 class="center">Cuci tangan dengan sabun</h6>
+
+                                </div>
+                            </div>
+
+                            <div class="col s12 m4">
+                                <div class="icon-block">
+                                    <div class=" mx-auto w-100px"><img class="responsive-img"
+                                            src="./images/touching-hand.svg">
+                                    </div>
+                                    <h6 class="center">Hindari menyentuh mata, hidung, dan mulut dengan tangan yang belum dicuci
+                                    </h6>
+                                </div>
+                            </div>
+
+                            <div class="col s12 m4">
+                                <div class="icon-block">
+                                    <div class=" mx-auto w-100px"><img class="responsive-img"
+                                            src="./images/healty-food.svg">
+                                    </div>
+                                    <h6 class="center">Konsumsi makanan bergizi dan berolahraga</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="parallax"><img src="./images/bg.JPG"></div>
-        </div>
-        
-    <!-- </div> -->
-  
-  <div class="container-90-m5 z-depth-3">
-      <div class="bawah row">
-          <div class="col s12">
-              <div class="row">
-                  <div class="col s12 m12 l6">
-                      <div class="video-container">
-                          <iframe width="100%" src="https://www.youtube.com/embed/UHgNNfazmjY" frameborder="0"
-                              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                              allowfullscreen></iframe>
-                      </div>
-                  </div>
-                  <div class="col s12 m12 l6">
-                      <h3 class="judul semi-bold">Apa Itu <span class="text-red">COVID-19</span>?</h3>
-                      <p>Corona Virus Disease 2019 atau COVID-19 adalah penyakit menular yang disebabkan oleh SARS-CoV-2,
-                          salah satu jenis koronavirus. Penderita COVID-19 dapat mengalami demam, batuk kering, dan
-                          kesulitan bernafas.
-                          <span class="br"></span>
-                          Infeksi menyebar dari satu orang ke orang lain melalui percikan (droplet) dari saluran
-                          pernapasan yang sering dihasilkan saat batuk atau bersin. Jarak jangkauan droplet biasanya
-                          hingga 1 meter. Droplet bisa menempel di benda, namun tidak akan bertahan lama di udara. Waktu
-                          dari paparan virus hingga timbulnya gejala klinis antara 1-14 hari dengan rata-rata 5 hari.
-                          Maka, bagi orang yang sedang sakit diwajibkan memakai masker guna meminimalisir penyebaran
-                          droplet. </p>
-                  </div>
-              </div>
-  
-          </div>
-          <div class="col s12">
-              <h3 class="judul semi-bold mb-1">Ayo lindongi diri dari <span class='judul text-red'>COVID-19</span>!</h3>
-              <div class="row">
-                  <div class="row">
-                      <div class="col s12 m4">
-                          <div class="icon-block">
-                              <div class=" mx-auto w-100px"><img class="responsive-img" height="10"
-                                      src="./images/cough.svg"></div>
-                              <h6 class="center">Terapkan etika batuk atau bersin (dengan menutup mulut dan hidung), dan
-                                  jangan meludah
-                                  sembarangan.</h6>
-  
-                          </div>
-                      </div>
-  
-                      <div class="col s12 m4">
-                          <div class="icon-block">
-                              <div class=" mx-auto w-100px"><img class="responsive-img" height="10"
-                                      src="./images/cleaning-thing.svg"></div>
-                              <h6 class="center">Bersihkan benda yang sering disentuh</h6>
-                          </div>
-                      </div>
-  
-                      <div class="col s12 m4">
-                          <div class="icon-block">
-                              <div class=" mx-auto w-100px"><img class="responsive-img" height="10"
-                                      src="./images/hospital.svg"></div>
-                              <h6 class="center">Gunakan masker jika Anda sakit dan segera periksakan diri ke fasilitas
-                                  kesehatan
-                                  terdekat</h6>
-                          </div>
-                      </div>
-                  </div>
-  
-                  <div class="row">
-                      <div class="col s12 m4">
-                          <div class="icon-block">
-                              <div class=" mx-auto w-100px"><img class="responsive-img" src="./images/wash hand.svg">
-                              </div>
-                              <h6 class="center">Cuci tangan dengan sabun</h6>
-  
-                          </div>
-                      </div>
-  
-                      <div class="col s12 m4">
-                          <div class="icon-block">
-                              <div class=" mx-auto w-100px"><img class="responsive-img" src="./images/touching-hand.svg">
-                              </div>
-                              <h6 class="center">Hindari menyentuh mata, hidung, dan mulut dengan tangan yang belum dicuci
-                              </h6>
-                          </div>
-                      </div>
-  
-                      <div class="col s12 m4">
-                          <div class="icon-block">
-                              <div class=" mx-auto w-100px"><img class="responsive-img" src="./images/healty-food.svg">
-                              </div>
-                              <h6 class="center">Konsumsi makanan bergizi dan berolahraga</h6>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-  
-  </div>
-  
-  
-  <div class="container-90">
-      <div class="section">
-          <div class="border-atas-bawah">
-              <div class="row">
-                  <div class="col s12">
-                      <div class="title-top-center">
-                          <h3 class="semi-bold">HOTLINE</h3>
-                      </div>
-                  </div>
-              </div>
-  
-              <div class="row hotline">
-                  <div class="col s12 m3 l3 lg3">
-                      <div class="card horizontal rounded">
-                          <div class="card-content">
-                              <span class="card-title white-text">Hotline COVID-19 Kominfo</span>
-                              <p><a href="https://api.whatsapp.com/send?phone=6281133399000"><i
-                                          class="material-icons white-text tiny">call</i> 081133399000</a></p>
-                          </div>
-                      </div>
-                  </div>
-  
-                  <div class="col s12 m3 l3 lg3">
-                      <div class="card horizontal rounded">
-                          <div class="card-content">
-                            <span class="card-title white-text">Kontak Darurat Daerah Istimewa Yogyakarta</span>
-                            <p><a href="tel:+628112764800"><i
-                                          class="material-icons white-text tiny">call</i>08112764800</a></p>
+
+
+        <div class="container-90">
+            <div class="section">
+                <div class="border-atas-bawah">
+                    <div class="row">
+                        <div class="col s12">
+                            <div class="title-top-center">
+                                <h3 class="semi-bold">HOTLINE</h3>
                             </div>
                         </div>
-                  </div>
-  
-                  <div class="col s12 m3 l3 lg3">
-                      <div class="card horizontal rounded">
-                          <div class="card-content">
-                            <span class="card-title white-text">Hotline Sulawesi Selatan</span>
-                            <p><a href="tel:+6281356240321"><i
-                                          class="material-icons white-text tiny">call</i>081356240321</a></p>
-                      </div>
-                        </div>
-                  </div>
-  
-                  <div class="col s12 m3 l3 lg3">
-                      <div class="card horizontal rounded">
-                          <div class="card-content">
-                            <span class="card-title white-text">Kontak darurat Kalimantan Barat</span>
-                            <p><a href="tel:+6281212123119 "><i
-                                          class="material-icons white-text tiny">call</i>081212123119</a></p>
-                      </div>
-                        </div>
-                  </div>
-                  <div class="col s12 m12 l12 lg12">
-                    <p class="small">* data oleh <a class="blue-text" href="https://www.sehatq.com/artikel/daftar-rumah-sakit-untuk-penanganan-virus-corona-covid-19">sehatq</a>
-                    </p>
-                  </div>
-  
-              </div>
-  
-              <div class="title-center">
-                  <h3 class="semi-bold">Rs Rujikan</h3>
-              </div>
-              <div class="row hospital">
-                  <div class="col s12 m3 l3 lg3">
-                      <div class="card">
-                          <div class="card-content">
-                              <span class="card-title white-text">RSU Dr. Zainoel Abidin Banda Aceh</span>
-                              <a href=""><i class="material-icons white-text tiny line-height-1">room</i> Jl. Teuku Moh.
-                                  Daud Beureueh No.108, Banda Aceh.</a>
-                              <a href="tel:+122" class=" w-100"><i class="material-icons white-text tiny line-height-1">call</i>
-                                  28148</a>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="col s12 m3 l3 lg3">
-                    <div class="card">
-                        <div class="card-content">
-                            <span class="card-title white-text">RSPI Prof. Dr. Sulianti Saroso</span>
-                            <a href=""><i class="material-icons white-text tiny line-height-1">room</i> Jl. Sunter Permai Raya, Tanjung Priok, Jakarta Utara.</a>
-                            <a href="#" class=" w-100"><i class="material-icons white-text tiny line-height-1">call</i>
-                                (021) 6506559</a>
-                        </div>
                     </div>
-                </div>
-                <div class="col s12 m3 l3 lg3">
-                    <div class="card">
-                        <div class="card-content">
-                            <span class="card-title white-text">RSUD Kabupaten Bekasi</span>
-                            <a href=""><i class="material-icons white-text tiny line-height-1">room</i> Jl. Raya Teuku Umar No.202, Bekasi.</a>
-                            <a href="tel:+122" class=" w-100"><i class="material-icons white-text tiny line-height-1">call</i>
-                                (021) 883 74 444</a>
+
+                    <div class="row hotline">
+                        <div class="col s12 m3 l3 lg3">
+                            <div class="card horizontal rounded">
+                                <div class="card-content">
+                                    <span class="card-title white-text">Hotline COVID-19 Kominfo</span>
+                                    <p><a href="https://api.whatsapp.com/send?phone=6281133399000"><i
+                                                class="material-icons white-text tiny">call</i> 081133399000</a></p>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col s12 m3 l3 lg3">
-                    <div class="card">
-                        <div class="card-content">
-                            <span class="card-title white-text">RS dr. Seoradji Tirtonegoro Klaten</span>
-                            <a href=""><i class="material-icons white-text tiny line-height-1">room</i> Jl. Dr. Soeradji Tirtonegoro No.1, Klaten.</a>
-                            <a href="tel:+122" class=" w-100"><i class="material-icons white-text tiny line-height-1">call</i>
-                                (0272) 321041</a>
+
+                        <div class="col s12 m3 l3 lg3">
+                            <div class="card horizontal rounded">
+                                <div class="card-content">
+                                    <span class="card-title white-text">Kontak Darurat Daerah Istimewa Yogyakarta</span>
+                                    <p><a href="tel:+628112764800"><i
+                                                class="material-icons white-text tiny">call</i>08112764800</a></p>
+                                </div>
+                            </div>
                         </div>
+
+                        <div class="col s12 m3 l3 lg3">
+                            <div class="card horizontal rounded">
+                                <div class="card-content">
+                                    <span class="card-title white-text">Hotline Sulawesi Selatan</span>
+                                    <p><a href="tel:+6281356240321"><i
+                                                class="material-icons white-text tiny">call</i>081356240321</a></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col s12 m3 l3 lg3">
+                            <div class="card horizontal rounded">
+                                <div class="card-content">
+                                    <span class="card-title white-text">Kontak darurat Kalimantan Barat</span>
+                                    <p><a href="tel:+6281212123119 "><i
+                                                class="material-icons white-text tiny">call</i>081212123119</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col s12 m12 l12 lg12">
+                            <p class="small">* data oleh <a class="blue-text"
+                                    href="https://www.galamedianews.com/nasional/251379/ini-nomor-hotline-covid-19-go-id-seputar-corona.html">galamedianews</a>
+                            </p>
+                        </div>
+
                     </div>
+
+                    <card-rs></card-rs>
+                    <!-- <div class="title-center">
+                        <h3 class="semi-bold">Rs Rujikan</h3>
+                    </div>
+                    <div class="row hospital">
+                        
+                    </div> -->
                 </div>
-              </div>
-          </div>
-      </div>
-  </div>
-  
-  
-  
-  <div class="container-90">
-      <!-- peta persebaran -->
-      <div class="data-persebaran row">
-  
-          <div class="col s12 m12 l12 lg12">
-              <div class="title-center">
-                  <h3 class="semi-bold center-align">
-                      Data Persebaran
-                  </h3>
-              </div>
-          </div>
-  
-          <div class="col s12 m6 l6 lg6 kiri">
-            <div id="mapid"></div>
-          </div>
-  
-          <div class="col s12 m6 l6 lg6 kanan">
-  
-              <div class="row">
-                  <div class="col s12 m12 l12 lg12">
-                      <h4 class="global semi-bold">Data Indonesia</h4>
-                  </div>
-  
-                  <div class="col s12 m12 l4 lg4">
-                      <div class="positif g-p">
-                          <h5 class="semi-bold">Positif</h5>
-                          <h4 class="semi-bold">0</h4>
-                          <p>orang</p>
-                      </div>
-                  </div>
-                  <div class="col s12 m6 l4 lg4">
-                      <div class="sembuh g-s">
-                          <h5 class="semi-bold">Sembuh</h5>
-                          <h4 class="semi-bold">0</h4>
-                          <p>orang</p>
-                      </div>
-                  </div>
-                  <div class="col s12 m6 l4 lg4">
-                      <div class="meninggal g-m">
-                          <h5 class="semi-bold">Meninggal</h5>
-                          <h4 class="semi-bold">0</h4>
-                          <p>orang</p>
-                      </div>
-                  </div>
-  
-  
-                  <div class="col s12 m12 l12 lg12">
-                      <h4 class="indo semi-bold">Data Indonesia Hari Ini</h4>
-                  </div>
-  
-                  <div class="col s12 m12 l4 lg4">
-                      <div class="positif i-p">
-                          <h5 class="semi-bold">Positif</h5>
-                          <h4 class="semi-bold">0</h4>
-                          <p>orang</p>
-                      </div>
-                  </div>
-                  <div class="col s12 m6 l4 lg4">
-                      <div class="sembuh i-s">
-                          <h5 class="semi-bold">Kasus baru</h5>
-                          <h4 class="semi-bold">0</h4>
-                          <p>kasus</p>
-                      </div>
-                  </div>
-                  <div class="col s12 m6 l4 lg4">
-                      <div class="meninggal i-m">
-                          <h5 class="semi-bold">Meninggal</h5>
-                          <h4 class="semi-bold">0</h4>
-                          <p>orang</p>
-                      </div>
-                  </div>
-              </div>
-  
-          </div>
-      </div>
-  </div>
-  
-  <div class="container-90">
-      <div class="section">
-          <!-- data per provinsi -->
-          <div class="border-atas">
-              <div class="row">
-                  <div class="col s12">
-                      <div class="title-top-center">
-                          <h3 class="semi-bold center-align">Data Per Provinsi</h3>
-                      </div>
-                  </div>
-              </div>
-  
-              <div class="provinsi row">
-  
-                  <div class="col s12 m12 l12 lg12">
-  
-                      <table class="highlight centered responsive-table" id="data-per-provinsi">
-                          <thead>
-                              <tr>
-                                  <th>N0.</th>
-                                  <th>Name Provinsi</th>
-                                  <th>Jumlah Positif</th>
-                                  <th>Jumlah Sembuh</th>
-                                  <th>Jumlah Meninggal</th>
-                              </tr>
-                          </thead>
-  
-                          <tbody>
-                          </tbody>
-                      </table>
-                  </div>
-                  <div class="col l12 s12 m12 lg12">
-                      <p class="small">* data oleh <a class="blue-text" href="https://kawalcorona.com/">kawalcorona</a>
-                      </p>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
-  
-  <div class="container-90">
-      <div class="section">
-          <!-- berita -->
-          <div class="border-atas">
-              <div class="row">
-                  <div class="col s12 m12 l12 lg12">
-                      <div class="title-top-center">
-                          <h3 class="semi-bold center-align">Berita Kesehatan</h3>
-                      </div>
-                  </div>
-              </div>
-  
-              <div class="row berita">
-
-              </div>
-          </div>
-      </div>
-  </div>
-  </div>
-  </main>
-
-  <footer class="page-footer teal">
-    <div class="container">
-      <div class="row">
-        <div class="col l6 s12">
-          <h5 class="white-text">Company Bio</h5>
-          <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
-
-
+            </div>
         </div>
-        <div class="col l6 s12">
-          <h5 class="white-text">Thanks to</h5>
-          <ul>
-            <li><a class="white-text" href="http://materializecss.com">Materialize</a></li>
-            <li><a class="white-text" href="https://kawalcorona.com">kawalcorona</a></li>
-            <li><a class="white-text" href="https://newsapi.org">newsapi</a></li>
-            <li><a class="white-text" href="https://undraw.co">undraw</a></li>
-            <li><a class="white-text" href="https://www.freepik.com">freepik</a></li>
-            
-          </ul>
+
+
+
+        <div class="container-90">
+            <!-- peta persebaran -->
+            <div class="data-persebaran row">
+
+                <div class="col s12 m12 l12 lg12">
+                    <div class="title-center">
+                        <h3 class="semi-bold center-align">
+                            Data Persebaran
+                        </h3>
+                    </div>
+                </div>
+
+                <div class="col s12 m6 l6 lg6 kiri">
+                    <div id="mapid"></div>
+                </div>
+
+                <div class="col s12 m6 l6 lg6 kanan">
+
+                    <div class="row">
+                        <div class="col s12 m12 l12 lg12">
+                            <h4 class="global semi-bold">Data Indonesia</h4>
+                        </div>
+                        <div class="col s12 m12 l4 lg4">
+                            <div class="positif g-p">
+                                <h5 class="semi-bold">Positif</h5>
+                                <div>0</div>
+                            </div>
+                        </div>
+                        <div class="col s12 m6 l4 lg4">
+                            <div class="sembuh g-s">
+                                <h5 class="semi-bold">Sembuh</h5>
+                                <div>0</div>
+                            </div>
+                        </div>
+                        <div class="col s12 m6 l4 lg4">
+                            <div class="meninggal g-m">
+                                <h5 class="semi-bold">Meninggal</h5>
+                                <div>0</div>
+                            </div>
+                        </div>
+
+
+                        <div class="col s12 m12 l12 lg12">
+                            <h4 class="indo semi-bold">Data Indonesia Hari Ini</h4>
+                        </div>
+
+                        <div class="col s12 m12 l4 lg4">
+                            <div class="positif i-p">
+                                <h5 class="semi-bold">Positif</h5>
+                                <div>0</div>
+                            </div>
+                        </div>
+                        <div class="col s12 m6 l4 lg4">
+                            <div class="sembuh i-s">
+                                <h5 class="semi-bold">Kasus baru</h5>
+                                <div>0</div>
+                            </div>
+                        </div>
+                        <div class="col s12 m6 l4 lg4">
+                            <div class="meninggal i-m">
+                                <h5 class="semi-bold">Meninggal</h5>
+                                <div>0</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-    <div class="footer-copyright">
-      <div class="container white-text center-align">
-      Made with <i class="red-text darken-1 tiny material-icons">favorite</i> by yuan
-      </div>
-    </div>
-  </footer>
 
+        <div class="container-90">
+            <div class="section">
+                <!-- data per provinsi -->
+                <div class="border-atas">
+                    <div class="row">
+                        <div class="col s12">
+                            <div class="title-top-center">
+                                <h3 class="semi-bold center-align">Data Per Provinsi</h3>
+                            </div>
+                        </div>
+                    </div>
 
-  <!--  Scripts-->
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src="js/materialize.js"></script>
-  <script src="js/init.js"></script>
-  <script src="js/index.js" type="module"></script>
+                    <div class="provinsi row">
+                        <div class="col l12 s12 m12 lg12">
+                            <p class="small">* Klik Nama Provinsi Untuk Membuka situs Resmi</p>
+                        </div>
+                        <div class="col s12 m12 l12 lg12">
+                            <table class="highlight centered responsive-table" id="data-per-provinsi">
+                                <thead>
+                                    <tr>
+                                        <th>N0.</th>
+                                        <th>Name Provinsi</th>
+                                        <th>Jumlah Positif</th>
+                                        <th>Jumlah Sembuh</th>
+                                        <th>Jumlah Meninggal</th>
+                                    </tr>
+                                </thead>
 
-  </body>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col l12 s12 m12 lg12">
+                            <p class="small">* data oleh <a class="blue-text"
+                                    href="https://kawalcorona.com/">kawalcorona</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-90">
+            <div class="section">
+                <!-- berita -->
+                <div class="border-atas">
+                    <div class="row">
+                        <div class="col s12 m12 l12 lg12">
+                            <div class="title-top-center">
+                                <h3 class="semi-bold center-align">Berita Kesehatan</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row berita">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </main>
+
+    <footer-fixed></footer-fixed>
+</body>
+
 </html>

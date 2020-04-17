@@ -1,0 +1,203 @@
+[
+    {
+        "nama":"RSU Dr. Zainoel Abidin Banda Aceh",
+        "alamat":"Jl. Teuku Moh. Daud Beureueh No.108, Banda Aceh.",
+        "telp":[
+            "(0651) 34565","22077, 28148"
+        ],
+        "provinsi" : "Aceh"
+    },
+    {
+        "nama":"RSU Cut Meutia Lhokseumawe",
+        "alamat":"Jl. Banda Aceh-Medan Km.6 Buket Rata, Lhokseumawe.",
+        "telp":[
+            "(0645) 43012"
+        ],
+        "provinsi" : "Aceh"
+    },
+    {
+        "nama":"RSUP H. Adam Malik Medan",
+        "alamat":"Jl. Bunga Lau No.17.",
+        "telp":[
+            "(061) 8360381"
+        ],
+        "provinsi" : "Sumatera Utara"
+    },
+    {
+        "nama":"RSU Kabanjahe",
+        "alamat":"Jl. KS Ketaren 8, Kabanjahe.",
+        "telp":[
+            "(0628) 20550"
+        ],
+        "provinsi" : "Sumatera Utara"
+    },
+    {
+        "nama":"RSU Dr. Djasamen Saragih Pematang Siantar",
+        "alamat":"Jl. Sutomo No.230, Pematang Siantar.",
+        "telp":[
+            "(0622) 22959"
+        ],
+        "provinsi" : "Sumatera Utara"
+    },
+    {
+        "nama":"RSUD Tarutung",
+        "alamat":"Jl. H. Agus Salim No.1, Tapanuli Utara.",
+        "telp":[
+            "(0633) 21303"
+        ],
+        "provinsi" : "Sumatera Utara"
+    },
+    {
+        "nama":"RSU Padang Sidempuan",
+        "alamat":"Jl. Dr. Ferdinand Lumban Tobing No.10, Padang Sidempuan.",
+        "telp":[
+            "(0634) 21780, 21251"
+        ],
+        "provinsi" : "Sumatera Utara"
+    },
+    
+    {
+        "nama":"RSUP Dr. M. Jamil Padang",
+        "alamat":"Jl. Perintis Kemerdekaan, Padang.",
+        "telp":[
+            "(0751) 32372, 37030"
+        ],
+        "provinsi" : "Sumatera Barat"
+    },
+    {
+        "nama":"RSUD Dr. Achmad Mochtar Bukittinggi",
+        "alamat":"Jl. Dr. Abdul Rivai No.1, Bukittinggi.",
+        "telp":[
+            "21831","(0752) 21720"
+        ],
+        "provinsi" : "Sumatera Barat"
+    },
+    {
+        "nama":"RSU Arifin Achmad",
+        "alamat":"Jl. Diponegoro No.2, Pekanbaru.",
+        "telp":[
+            "(0761) 21618"
+        ],
+        "provinsi" : "Riau"
+    },
+    {
+        "nama":"RSUD Kota Dumai",
+        "alamat":"Jl. Tanjung Jati No.4, Dumai.",
+        "telp":[
+            "(0762) 38368","(0765) 440992"
+        ],
+        "provinsi" : "Riau"
+    },
+    {
+        "nama":"RSUD Puri Husada Tembilahan",
+        "alamat":"Jl. Veteran No.52, Hilir Tembilahan.",
+        "telp":[
+            "(0768) 22118"
+        ],
+        "provinsi" : "Riau"
+    },
+    {
+        "nama":"RSUP dr. Kariadi",
+        "alamat":"Jl. Dr. Sutomo No.16, Semarang.",
+        "telp":[
+            "8413476","(024) 8413993"
+        ],
+        "provinsi" : "Jawa Tengah"
+    },
+    {
+        "nama":"RS dr. Seoradji Tirtonegoro Klaten",
+        "alamat":"Jl. Dr. Soeradji Tirtonegoro No.1, Klaten.",
+        "telp":[
+            "(0272) 321041"
+        ],
+        "provinsi" : "Jawa Tengah"
+    },
+    {
+        "nama":"RS Paru dr. Ario Wirawan",
+        "alamat":"Jl. Hasanudin No.806, Mangunsari, Salatiga.",
+        "telp":[
+            "(0298) 326130"
+        ],
+        "provinsi" : "Jawa Tengah"
+    },
+    {
+        "nama":"RSUD Prof. Dr. Margono Soekarjo",
+        "alamat":"Jl. Dr. Gumbreg No.1, Purwokerto.",
+        "telp":[
+            "(0281) 632708"
+        ],
+        "provinsi" : "Jawa Tengah"
+    },
+    {
+        "nama":"RSUD dr. Moewardi Surakarta",
+        "alamat":"Jl. Kolonel Sutarto No.132, Surakarta.",
+        "telp":[
+            "(0271) 634634"
+        ],
+        "provinsi" : "Jawa Tengah"
+    },
+    {
+        "nama":"RSUD Tidar Magelang",
+        "alamat":"Jl. Tidar No.30 A, Magelang.",
+        "telp":[
+            "(0293) 36226"
+        ],
+        "provinsi" : "Jawa Tengah"
+    },
+    {
+        "nama":"RSUD KRMT Wongsonegoro",
+        "alamat":"Jl. Fatmawati No.1, Semarang.",
+        "telp":[
+            "(024) 6711500"
+        ],
+        "provinsi" : "Jawa Tengah"
+    },
+    {
+        "nama":"RSUD Kardinah Tegal",
+        "alamat":"Jl. Aip. Ks. Tubun No. 4, Tegal.",
+        "telp":[
+            "(0283) 356067"
+        ],
+        "provinsi" : "Jawa Tengah"
+    },
+    {
+        "nama":"RSUD Banyumas",
+        "alamat":"Jl. Rumah Sakit No.1, Karangpucung, Kabupaten Banyumas.",
+        "telp":[
+            "(0281) 796031"
+        ],
+        "provinsi" : "Jawa Tengah"
+    },
+    {
+        "nama":"RSU dr. Loekmonohadi",
+        "alamat":"Jl. Dr. Lukmonohadi No.19, Kabupaten Kudus.",
+        "telp":[
+            "(0291) 444001"
+        ],
+        "provinsi" : "Jawa Tengah"
+    },
+    {
+        "nama":"RSUD Kraton",
+        "alamat":"Jl. Veteran No.31, Pekalongan.",
+        "telp":[
+            "(0285) 421621"
+        ],
+        "provinsi" : "Jawa Tengah"
+    },
+    {
+        "nama":"RSUD dr. Soeselo Slawi",
+        "alamat":"Jl. Dr. Sutomo No.63, Slawi.",
+        "telp":[
+            "(0283) 491016"
+        ],
+        "provinsi" : "Jawa Tengah"
+    },
+    {
+        "nama":"RSUD RAA Soewondo Kendal",
+        "alamat":"Jl. Laut No.21, Kendal.",
+        "telp":[
+            "(0294) 381433"
+        ],
+        "provinsi" : "Jawa Tengah"
+    }
+]

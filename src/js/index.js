@@ -1,4 +1,5 @@
 import kawalKorona from './api/kawalKorona.js'
+import './web component/init.js'
 
 let mymap = L.map('mapid').setView([-0.789275, 113.9213257], 4);
 
@@ -13,20 +14,20 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 
 
 // *** data global
-const gPositive = document.querySelector('.g-p > h4')
-const gRecovered = document.querySelector('.g-s > h4')
-const gDeath = document.querySelector('.g-m > h4')
+const gPositive = document.querySelector('.g-p > div')
+const gRecovered = document.querySelector('.g-s > div')
+const gDeath = document.querySelector('.g-m > div')
 // *** data indo
-const iPositive = document.querySelector('.i-p > h4')
-const iRecovered = document.querySelector('.i-s > h4')
-const iDeath = document.querySelector('.i-m > h4')
+const iPositive = document.querySelector('.i-p > div')
+const iRecovered = document.querySelector('.i-s > div')
+const iDeath = document.querySelector('.i-m > div')
 
 // ***** data per provinis
 
 const dataPerProv = document.querySelector('#data-per-provinsi > tbody')
 
 
-
+// $ icon popoup
 const popup = L.popup();
 const coronaIcon = L.icon({
     iconUrl: './images/virus-2.png',
@@ -39,25 +40,19 @@ const coronaIcon = L.icon({
     popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
 });
 
-// function onMapClick(e) {
-//     popup
-//         .setLatLng(e.latlng)
-//         .setContent("You clicked the map at ")
-//         .openOn(mymap);
-// }
-
-// marker
+// $ marker
 const marker = []
 const data = new kawalKorona()
 
-// !data provinsi
+// $ data provinsi
 data.api('/provinsi').then(res => {
     
-    
+    // $ Buat Marker Di Map
     res.map( (val, index) => {
+        
         val = val.attributes
-        // val.kordinat = JSON.parse(val.kordinat)
-        const { lat ,lng } = val.kordinat
+        
+        const { lat ,lng } = val.data_tambahan.kordinat
         
         let view = `<div class="popup-kasus"> 
                     <p>Provinsi : ${val.Provinsi}</p>
@@ -73,7 +68,12 @@ data.api('/provinsi').then(res => {
                 .setContent(view)
                 .openOn(mymap);
         })
- 
+        
+        // $ List Data per provinsi
+        
+        if (val.data_tambahan.situs !== undefined) {
+            val.Provinsi = `<a href="${val.data_tambahan.situs}">${val.Provinsi}</a>`
+        }
         let list = document.createElement('tr')
         list.innerHTML = `
                             <td>${index + 1}</td>
@@ -84,38 +84,37 @@ data.api('/provinsi').then(res => {
         dataPerProv.appendChild(list)
     })
 }).catch( err => {
-    console.log(err);
     
     
     popup.setLatLng([-0.789275, 113.9213257])
-        .setContent(`<div class="popup-kasus"> 
-                    <p>Maaf Data Gagal Di load</p>
-                    <div>"`)
+        .setContent(`<div class="popup-kasus center-align"> 
+                        <i class="red-text medium material-icons w-100">error_outline</i>
+                        <p>Gagal memuat Data</p>
+                    <div>`)
         .openOn(mymap);
     let list = document.createElement('tr')
     list.innerHTML = `
                         <td>1</td>
-                        <td>Maaf Data Gagal Di Load</td>
-                        <td>Maaf Data Gagal Di Load</td>
-                        <td>Maaf Data Gagal Di Load</td>
-                        <td>Maaf Data Gagal Di Load</td>`
+                        <td>Gagal memuat Data</td>
+                        <td>Gagal memuat Data</td>
+                        <td>Gagal memuat Data</td>
+                        <td>Gagal memuat Data</td>`
     dataPerProv.appendChild(list)
 })
 
-
+// $ berita
 data.api('/berita').then( res => {
+    const container_berita = document.querySelector('.berita')
     for (let i = 0; i < 3; i++) {
-        let container_berita = document.querySelector('.berita')
-        
         let berita = document.createElement('div')
         berita.className = 'col s12 m4 l4 lg4'
-        berita.innerHTML = `<div class="card medium">
+        berita.innerHTML = `<div class="card">
                             <div class="card-image">
-                                <img class="responsive-img" src="${res.articles[i].urlToImage}">
+                                <img class="responsive-img" src="${res.articles[i].urlToImage == null ? './images/142.jpg' : res.articles[i].urlToImage}">
                             </div>
                             <div class="card-content">
                                 <span class="card-title">${res.articles[i].title}</span>
-                                <p>${res.articles[i].description}</p>
+                                <p>${res.articles[i].description == null ? '' : res.articles[i].description}</p>
                             </div>
                             <div class="card-action">
                                 <a target="_blank" rel="noopener noreferrer" href="${res.articles[i].url}">Baca Selengkapnya</a>
@@ -130,55 +129,76 @@ data.api('/berita').then( res => {
             container_berita.appendChild(link)
         }
     }
+
+    const berita_card = container_berita.querySelectorAll('.card')
+    const berita_card_img = container_berita.querySelectorAll('.card .responsive-img')
+    let heigest_card = 0
+
+    berita_card_img.forEach( img => {
+        img.onload = () => {
+            berita_card.forEach( card => {
+        
+            heigest_card = card.clientHeight >= heigest_card ? card.clientHeight : heigest_card
+            })
+
+            berita_card.forEach( card => {
+                card.setAttribute('style',`min-height:${heigest_card}px`)
+            })
+        }
+        img.onerror = () => {
+            img.src = './images/142.jpg'
+        }
+    })
 }).catch( err => {
     let container_berita = document.querySelector('.berita')
-        
         let berita = document.createElement('div')
         berita.className = 'col s12 m12 l12 lg12'
-        berita.innerHTML = `<div class="card medium">
-                            <div class="card-content center-align">
-                                <span class="card-title red-text">Maaf Data Gagal Di Load</span>
+        berita.innerHTML = `<div class="card">
+                            <div class="card-content center-align my-auto">
+                                <i class="red-text large material-icons w-100">error_outline</i>
+                                <span class="card-title red-text">Gagal memuat Data</span>
                             </div>
                             </div>`
         
         container_berita.appendChild(berita)
-
 })
 
+// $ Data Indonesia Dan Hari ini
 data.api('/indo').then( res => {
+    // console.error(res)
+    if (res.deaths == undefined) {
+        //!  FIXME: entah kenapa jika blok if ini di hapus maka blok catch tidak berjalan 🤔 
+        // !data seluruh
+        // gDeath.innerHTML = 'Maaf'
+        // gPositive.innerHTML = 'Data Gagal Di Load'
+        // gRecovered.innerHTML = 'Data Gagal Di Load'
+        console.log(res)
+        // ! data hari ini
+        // iDeath.innerHTML = 'Maaf'
+        // iPositive.innerHTML = 'Data Gagal Di Load'
+        // iRecovered.innerHTML = 'Data Gagal Di Load'
+    }
+    
     // !data seluruh
-    gDeath.innerHTML = res.deaths
-    gPositive.innerHTML = res.cases
-    gRecovered.innerHTML = res.recovered
+    gDeath.innerHTML = `<h4 class="semi-bold center-align">${res.deaths}</h4> <p class="center-align">orang</p>`
+    gPositive.innerHTML = `<h4 class="semi-bold center-align">${res.cases}</h4> <p class="center-align">orang</p>`
+    gRecovered.innerHTML = `<h4 class="semi-bold center-align">${res.recovered}</h4> <p class="center-align">orang</p>`
     // ! data hari ini
-    iDeath.innerHTML = res.todayDeaths
-    iPositive.innerHTML = res.active
-    iRecovered.innerHTML = res.todayCases
+    iDeath.innerHTML = `<h4 class="semi-bold center-align">${res.todayDeaths}</h4> <p class="center-align">orang</p>`
+    iPositive.innerHTML = `<h4 class="semi-bold center-align">${res.active}</h4> <p class="center-align">orang</p>`
+    iRecovered.innerHTML = `<h4 class="semi-bold center-align">${res.todayCases}</h4> <p class="center-align">orang</p>`
     
 }).catch( err => {
+    
+    // ! FIXME: entah kenapa blok error nya tidak berfungsi 🙆‍♂️ 
     // !data seluruh
-    gDeath.innerHTML = 'Maaf'
-    gPositive.innerHTML = 'Data Gagal Di Load'
-    gRecovered.innerHTML = 'Data Gagal Di Load'
-    console.log(err);
+    const pesan_error = '<p class="semi-bold center-align"><i class="material-icons w-100">error_outline</i> Gagal memuat Data</p>'
+    gPositive.innerHTML = pesan_error
+    gDeath.innerHTML = pesan_error
+    gRecovered.innerHTML = pesan_error
+
     // ! data hari ini
-    iDeath.innerHTML = 'Maaf'
-    iPositive.innerHTML = 'Data Gagal Di Load'
-    iRecovered.innerHTML = 'Data Gagal Di Load'
+    iPositive.innerHTML = pesan_error
+    iDeath.innerHTML = pesan_error
+    iRecovered.innerHTML = pesan_error
 })
-
-
-
-// standalone popup info
-// let popup = L.popup()
-//     .setLatLng([-7.2491698, 112.7508316])
-//     .setContent("I am a standalone popup.")
-//     .openOn(mymap);
-
-// event
-// function onMapClick(e) {
-//     marker.bindPopup("You clicked the map at " + e.latlng).openPopup();
-//     // alert("You clicked the map at " + e.latlng);
-// }
-
-// marker.on('click', onMapClick);

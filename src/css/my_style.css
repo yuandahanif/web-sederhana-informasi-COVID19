@@ -121,6 +121,10 @@ span.br{
     margin-left: auto;
     margin-right: auto;
 }
+.my-auto{
+    margin-top: auto;
+    margin-bottom: auto;
+}
 .mb-1{
     margin-bottom: 1em;
 }
@@ -152,9 +156,7 @@ span.br{
     font-size: 1em;
 }
 
-
 /* ****************** hotline dan hospital ********************** */
-
 .hotline > div > div , .hospital > div > div{
     flex-direction: column;
     justify-content: center;
@@ -231,6 +233,7 @@ span.br{
     background: #5B5B5B;
 }
 
+/* ! Popup Di map */
 .popup-kasus > p{
     margin: 2px 0;
 }
@@ -301,6 +304,17 @@ span.br{
 }
 .berita-lainya{
     margin: 0 auto;;
+}
+.berita .card{
+    display: flex;
+    flex-direction: column;
+}
+.berita .card .card-content{
+    height: 100%;
+    flex-grow: 1;
+  }
+.berita-card .card .card-action{
+    justify-self: flex-end;
 }
 
 

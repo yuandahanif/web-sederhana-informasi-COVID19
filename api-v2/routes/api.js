@@ -13,7 +13,7 @@ const fs = require('fs')
 function axios_get(url, onSuccess, onErr = () => {}) {
     axios.get(url).then(onSuccess).catch(error => {
 
-        // ! kode ini dari https://gist.github.com/fgilio/230ccd514e9381fafa51608fcf137253.js
+        // ! kode dibawah ini diambil dari https://gist.github.com/fgilio/230ccd514e9381fafa51608fcf137253.js
         if (error.response) {
             /*
              * The request was made and the server responded with a
@@ -22,22 +22,22 @@ function axios_get(url, onSuccess, onErr = () => {}) {
             console.log(error.response.data);
             console.log(error.response.status);
             console.log(error.response.headers);
-            res.status(error.response.status || 404).end(error.data);
+            // res.status(error.response.status || 404).end(error.data);
         } else if (error.request) {
             /*
              * The request was made but no response was received, `error.request`
              * is an instance of XMLHttpRequest in the browser and an instance
              * of http.ClientRequest in Node.js
              */
-            res.status(error.response.status || 404).end(error.request);
+            // res.status(error.response.status || 404).end(error.request);
             console.log(error.request);
         } else {
             // Something happened in setting up the request and triggered an Error
-            res.status(error.response.status || 404).end(error.message);
+            // res.status(error.response.status || 404).end(error.message);
             console.log('Error', error.message);
         }
         console.log(error.config);
-        res.status(error.response.status || 404).end(error.config);
+        // res.status(error.response.status || 404).end(error.config);
         onErr(error);
     })
 }
@@ -45,14 +45,14 @@ function axios_get(url, onSuccess, onErr = () => {}) {
 
 // $ data covid (Dunia)
 route.get('/all', (req, res) => {
-    axios_get('https://corona.lmao.ninja/all',
-        response => res.status(200).json(response.data) )
+    axios_get('https://corona.lmao.ninja/v2/all',
+        response => res.status(200).json(response.data))
 })
 
 // $ data COVID Indonesia
 route.get('/indo', (req, res) => {
-    axios_get('https://corona.lmao.ninja/countries/indonesia',
-        response => res.status(200).json(response.data) )
+    axios_get('https://corona.lmao.ninja/v2/countries/indonesia',
+        response => res.status(200).json(response.data))
 })
 
 // $ history data kasus COVID19 di Indonesia
@@ -68,17 +68,23 @@ route.get('/harian', (req, res) => {
 
 // $ data provinsi
 route.get('/provinsi', (req, res) => {
+    // *data kordinat provinsi dari file json
     const data_kordinat_provinsi = JSON.parse(fs.readFileSync('./api-v2/api/data_provinsi_offline.json', 'utf-8'))
 
+    // *data kasus per provinsi
     axios_get('https://api.kawalcorona.com/indonesia/provinsi',
         response => {
             let provinsi_and_kordinat = response.data.map(provinsi => {
-                let kordinat = data_kordinat_provinsi.filter(data_kordinat => {
+
+                let data_tambahan = data_kordinat_provinsi.filter(data_kordinat => {
                     if (provinsi.attributes.Provinsi == data_kordinat.Provinsi) {
-                        return data_kordinat.kordinat
+                        return data_kordinat
                     }
                 })
-                provinsi.attributes.kordinat = kordinat[0].kordinat
+                provinsi.attributes.data_tambahan = {
+                    kordinat: data_tambahan[0].kordinat,
+                    situs: data_tambahan[0].situs || undefined
+                }
                 return provinsi
             })
             res.json(provinsi_and_kordinat);
@@ -91,6 +97,15 @@ route.get('/berita', (req, res) => {
         response => {
             res.json(response.data)
         })
+})
+
+route.get('/rumah_sakit/', (req, res) => {
+    const data_rumah_sakit = JSON.parse(fs.readFileSync('./api-v2/api/data_rumah_sakit.json', 'utf-8'))
+    
+    res.send(data_rumah_sakit);
+})
+route.get('/rumah_sakit/:namaRs', (req, res) => {
+        res.send(req.params)
 })
 
 module.exports = route
