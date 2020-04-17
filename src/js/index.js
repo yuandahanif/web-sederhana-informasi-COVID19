@@ -46,7 +46,6 @@ const data = new kawalKorona()
 
 // $ data provinsi
 data.api('/provinsi').then(res => {
-    
     // $ Buat Marker Di Map
     res.map( (val, index) => {
         
@@ -100,67 +99,6 @@ data.api('/provinsi').then(res => {
                         <td>Gagal memuat Data</td>
                         <td>Gagal memuat Data</td>`
     dataPerProv.appendChild(list)
-})
-
-// $ berita
-data.api('/berita').then( res => {
-    const container_berita = document.querySelector('.berita')
-    for (let i = 0; i < 3; i++) {
-        let berita = document.createElement('div')
-        berita.className = 'col s12 m4 l4 lg4'
-        berita.innerHTML = `<div class="card">
-                            <div class="card-image">
-                                <img class="responsive-img" src="${res.articles[i].urlToImage == null ? './images/142.jpg' : res.articles[i].urlToImage}">
-                            </div>
-                            <div class="card-content">
-                                <span class="card-title">${res.articles[i].title}</span>
-                                <p>${res.articles[i].description == null ? '' : res.articles[i].description}</p>
-                            </div>
-                            <div class="card-action">
-                                <a target="_blank" rel="noopener noreferrer" href="${res.articles[i].url}">Baca Selengkapnya</a>
-                            </div>
-                            </div>`
-        
-        container_berita.appendChild(berita)
-        if (i == 2) {
-            let link = document.createElement('div')
-            link.className = 'col s12 l12 m12 lg12 center-align'
-            link.innerHTML = '<a href="" class="berita-lainya">Baca Berita Lainya</a>'
-            container_berita.appendChild(link)
-        }
-    }
-
-    const berita_card = container_berita.querySelectorAll('.card')
-    const berita_card_img = container_berita.querySelectorAll('.card .responsive-img')
-    let heigest_card = 0
-
-    berita_card_img.forEach( img => {
-        img.onload = () => {
-            berita_card.forEach( card => {
-        
-            heigest_card = card.clientHeight >= heigest_card ? card.clientHeight : heigest_card
-            })
-
-            berita_card.forEach( card => {
-                card.setAttribute('style',`min-height:${heigest_card}px`)
-            })
-        }
-        img.onerror = () => {
-            img.src = './images/142.jpg'
-        }
-    })
-}).catch( err => {
-    let container_berita = document.querySelector('.berita')
-        let berita = document.createElement('div')
-        berita.className = 'col s12 m12 l12 lg12'
-        berita.innerHTML = `<div class="card">
-                            <div class="card-content center-align my-auto">
-                                <i class="red-text large material-icons w-100">error_outline</i>
-                                <span class="card-title red-text">Gagal memuat Data</span>
-                            </div>
-                            </div>`
-        
-        container_berita.appendChild(berita)
 })
 
 // $ Data Indonesia Dan Hari ini

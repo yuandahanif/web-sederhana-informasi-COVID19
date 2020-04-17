@@ -1,5 +1,5 @@
 import config from './config.js'
-import './card-rs-content.js'
+import './rs-content-card.js'
 
 class cardRs extends HTMLElement {
 
