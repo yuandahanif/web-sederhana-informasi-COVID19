@@ -10,8 +10,8 @@ const fs = require('fs')
  * @param {FunctionStringCallback} onSuccess callback yang kan digunakan untuk Then
  * @param {FunctionStringCallback} onErr Callback yang akan digunakan untuk catch
  */
-function axios_get(url, onSuccess, onErr = () => {}) {
-    axios.get(url).then(onSuccess).catch(error => {
+function axios_get(url, onSuccess, res) {
+    axios.get(url).then(onSuccess).catch( error => {
 
         // ! kode dibawah ini diambil dari https://gist.github.com/fgilio/230ccd514e9381fafa51608fcf137253.js
         if (error.response) {
@@ -19,26 +19,25 @@ function axios_get(url, onSuccess, onErr = () => {}) {
              * The request was made and the server responded with a
              * status code that falls out of the range of 2xx
              */
-            console.log(error.response.data);
-            console.log(error.response.status);
-            console.log(error.response.headers);
-            // res.status(error.response.status || 404).end(error.data);
+            // console.log(error.response.data);
+            // console.log(error.response.status);
+            // console.log(error.response.headers);
+            res.status(error.response.status).end(error.data);
         } else if (error.request) {
             /*
              * The request was made but no response was received, `error.request`
              * is an instance of XMLHttpRequest in the browser and an instance
              * of http.ClientRequest in Node.js
              */
-            // res.status(error.response.status || 404).end(error.request);
-            console.log(error.request);
+            res.status(500).end(error.request);
+            // console.log(error.request);
         } else {
             // Something happened in setting up the request and triggered an Error
-            // res.status(error.response.status || 404).end(error.message);
-            console.log('Error', error.message);
+            res.status(500).end(error.message);
+            // console.log('Error', error.message);
         }
-        console.log(error.config);
-        // res.status(error.response.status || 404).end(error.config);
-        onErr(error);
+        // console.log(error.config);
+        res.status(500).end(error.config);
     })
 }
 
@@ -46,13 +45,15 @@ function axios_get(url, onSuccess, onErr = () => {}) {
 // $ data covid (Dunia)
 route.get('/all', (req, res) => {
     axios_get('https://corona.lmao.ninja/v2/all',
-        response => res.status(200).json(response.data))
+        response => res.status(200).json(response.data),
+        res)
 })
 
 // $ data COVID Indonesia
 route.get('/indo', (req, res) => {
     axios_get('https://corona.lmao.ninja/v2/countries/indonesia',
-        response => res.status(200).json(response.data))
+        response => res.status(200).json(response.data),
+        res)
 })
 
 // $ history data kasus COVID19 di Indonesia
@@ -63,11 +64,18 @@ route.get('/harian', (req, res) => {
             if (country.country == 'Indonesia') return country
         })
         res.status(200).json(indonesia[0])
-    })
+    }, res)
 })
 
-// $ data provinsi
-route.get('/provinsi', (req, res) => {
+// $ data provinsi aja
+route.get('./provinsi',(req,res)=>{
+    axios_get('https://api.kawalcorona.com/indonesia/provinsi', 
+        response => res.json(response.data),
+    res)
+})
+
+// $ data provinsi + kordinat Provinsi
+route.get('/provinsi/kordinat', (req, res) => {
     // *data kordinat provinsi dari file json
     const data_kordinat_provinsi = JSON.parse(fs.readFileSync('./api-v2/api/data_provinsi_offline.json', 'utf-8'))
 
@@ -88,20 +96,18 @@ route.get('/provinsi', (req, res) => {
                 return provinsi
             })
             res.json(provinsi_and_kordinat);
-        })
+        }, res)
 })
 
 // $ data berita
 route.get('/berita', (req, res) => {
     axios_get('http://newsapi.org/v2/top-headlines?country=id&category=health&apiKey=a342b5ed3eec4fc7bc745cb7103c4ebe',
-        response => {
-            res.json(response.data)
-        })
+        response =>  res.json(response.data),
+        res)
 })
 
 route.get('/rumah_sakit/', (req, res) => {
     const data_rumah_sakit = JSON.parse(fs.readFileSync('./api-v2/api/data_rumah_sakit.json', 'utf-8'))
-    
     res.send(data_rumah_sakit);
 })
 route.get('/rumah_sakit/:namaRs', (req, res) => {

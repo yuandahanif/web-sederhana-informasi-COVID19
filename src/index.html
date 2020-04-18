@@ -204,14 +204,7 @@
                         </div>
 
                     </div>
-
                     <card-rs></card-rs>
-                    <!-- <div class="title-center">
-                        <h3 class="semi-bold">Rs Rujikan</h3>
-                    </div>
-                    <div class="row hospital">
-                        
-                    </div> -->
                 </div>
             </div>
         </div>
@@ -230,103 +223,15 @@
                     </div>
                 </div>
 
-                <div class="col s12 m6 l6 lg6 kiri">
-                    <div id="mapid"></div>
-                </div>
-
-                <div class="col s12 m6 l6 lg6 kanan">
-
-                    <div class="row">
-                        <div class="col s12 m12 l12 lg12">
-                            <h4 class="global semi-bold">Data Indonesia</h4>
-                        </div>
-                        <div class="col s12 m12 l4 lg4">
-                            <div class="positif g-p">
-                                <h5 class="semi-bold">Positif</h5>
-                                <div>0</div>
-                            </div>
-                        </div>
-                        <div class="col s12 m6 l4 lg4">
-                            <div class="sembuh g-s">
-                                <h5 class="semi-bold">Sembuh</h5>
-                                <div>0</div>
-                            </div>
-                        </div>
-                        <div class="col s12 m6 l4 lg4">
-                            <div class="meninggal g-m">
-                                <h5 class="semi-bold">Meninggal</h5>
-                                <div>0</div>
-                            </div>
-                        </div>
-
-
-                        <div class="col s12 m12 l12 lg12">
-                            <h4 class="indo semi-bold">Data Indonesia Hari Ini</h4>
-                        </div>
-
-                        <div class="col s12 m12 l4 lg4">
-                            <div class="positif i-p">
-                                <h5 class="semi-bold">Positif</h5>
-                                <div>0</div>
-                            </div>
-                        </div>
-                        <div class="col s12 m6 l4 lg4">
-                            <div class="sembuh i-s">
-                                <h5 class="semi-bold">Kasus baru</h5>
-                                <div>0</div>
-                            </div>
-                        </div>
-                        <div class="col s12 m6 l4 lg4">
-                            <div class="meninggal i-m">
-                                <h5 class="semi-bold">Meninggal</h5>
-                                <div>0</div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
+                <map-persebaran></map-persebaran>
+                <data-card></data-card>
             </div>
         </div>
 
         <div class="container-90">
             <div class="section">
                 <!-- data per provinsi -->
-                <div class="border-atas">
-                    <div class="row">
-                        <div class="col s12">
-                            <div class="title-top-center">
-                                <h3 class="semi-bold center-align">Data Per Provinsi</h3>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="provinsi row">
-                        <div class="col l12 s12 m12 lg12">
-                            <p class="small">* Klik Nama Provinsi Untuk Membuka situs Resmi</p>
-                        </div>
-                        <div class="col s12 m12 l12 lg12">
-                            <table class="highlight centered responsive-table" id="data-per-provinsi">
-                                <thead>
-                                    <tr>
-                                        <th>N0.</th>
-                                        <th>Name Provinsi</th>
-                                        <th>Jumlah Positif</th>
-                                        <th>Jumlah Sembuh</th>
-                                        <th>Jumlah Meninggal</th>
-                                    </tr>
-                                </thead>
-
-                                <tbody>
-                                </tbody>
-                            </table>
-                        </div>
-                        <div class="col l12 s12 m12 lg12">
-                            <p class="small">* data oleh <a class="blue-text"
-                                    href="https://kawalcorona.com/">kawalcorona</a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
+                <list-provinsi></list-provinsi>
             </div>
         </div>
 
