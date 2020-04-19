@@ -10,7 +10,7 @@ const fs = require('fs')
  * @param {FunctionStringCallback} onSuccess callback yang kan digunakan untuk Then
  * @param {FunctionStringCallback} onErr Callback yang akan digunakan untuk catch
  */
-function axios_get(url, onSuccess, res) {
+function axios_get(url, onSuccess, onErr = () => {}) {
     axios.get(url).then(onSuccess).catch( error => {
 
         // ! kode dibawah ini diambil dari https://gist.github.com/fgilio/230ccd514e9381fafa51608fcf137253.js
@@ -19,25 +19,28 @@ function axios_get(url, onSuccess, res) {
              * The request was made and the server responded with a
              * status code that falls out of the range of 2xx
              */
-            // console.log(error.response.data);
-            // console.log(error.response.status);
-            // console.log(error.response.headers);
-            res.status(error.response.status).end(error.data);
+            console.log(error.response.data);
+            console.log(error.response.status);
+            console.log(error.response.headers);
+            // res.status(error.response.status).end(error.data);
+            onErr('error.response.status')
         } else if (error.request) {
             /*
              * The request was made but no response was received, `error.request`
              * is an instance of XMLHttpRequest in the browser and an instance
              * of http.ClientRequest in Node.js
              */
-            res.status(500).end(error.request);
-            // console.log(error.request);
+            // res.status(500).end(error.request);
+            console.log(error.request);
+            onErr('500 - internal server error')
         } else {
             // Something happened in setting up the request and triggered an Error
-            res.status(500).end(error.message);
-            // console.log('Error', error.message);
+            // res.status(500).end(error.message);
+            console.log('Error', error.message);
+            onErr(error.message)
         }
-        // console.log(error.config);
-        res.status(500).end(error.config);
+        console.log(error.config);
+        // res.status(500).end(error.config);
     })
 }
 
@@ -46,14 +49,14 @@ function axios_get(url, onSuccess, res) {
 route.get('/all', (req, res) => {
     axios_get('https://corona.lmao.ninja/v2/all',
         response => res.status(200).json(response.data),
-        res)
+        (err) => { res.status(500).end(err)})
 })
 
 // $ data COVID Indonesia
 route.get('/indo', (req, res) => {
     axios_get('https://corona.lmao.ninja/v2/countries/indonesia',
         response => res.status(200).json(response.data),
-        res)
+        (err) => { res.status(500).end(err)})
 })
 
 // $ history data kasus COVID19 di Indonesia
@@ -64,14 +67,14 @@ route.get('/harian', (req, res) => {
             if (country.country == 'Indonesia') return country
         })
         res.status(200).json(indonesia[0])
-    }, res)
+    }, (err) => { res.status(500).end(err)})
 })
 
 // $ data provinsi aja
-route.get('./provinsi',(req,res)=>{
+route.get('/provinsi',(req,res)=>{
     axios_get('https://api.kawalcorona.com/indonesia/provinsi', 
         response => res.json(response.data),
-    res)
+        (err) => {res.status(500).end(err)})
 })
 
 // $ data provinsi + kordinat Provinsi
@@ -96,14 +99,14 @@ route.get('/provinsi/kordinat', (req, res) => {
                 return provinsi
             })
             res.json(provinsi_and_kordinat);
-        }, res)
+        }, (err) => { res.status(500).end(err)})
 })
 
 // $ data berita
 route.get('/berita', (req, res) => {
     axios_get('http://newsapi.org/v2/top-headlines?country=id&category=health&apiKey=a342b5ed3eec4fc7bc745cb7103c4ebe',
         response =>  res.json(response.data),
-        res)
+        (err) => { res.status(500).end(err)})
 })
 
 route.get('/rumah_sakit/', (req, res) => {

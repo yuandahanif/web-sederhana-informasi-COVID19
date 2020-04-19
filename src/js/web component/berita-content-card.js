@@ -40,7 +40,6 @@ class cardBeritaContent extends HTMLElement {
         let heigest_card = 0
     
         berita_card_img.forEach( img => {
-
             img.onload = () => {
                 berita_card.forEach( card => {
                     heigest_card = card.clientHeight >= heigest_card ? card.clientHeight : heigest_card

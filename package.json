@@ -27,6 +27,7 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "materialize-css": "^1.0.0-rc.2",
-    "reset-css": "^5.0.1"
+    "reset-css": "^5.0.1",
+    "sweetalert2": "^9.10.12"
   }
 }

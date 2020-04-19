@@ -6,9 +6,8 @@ class cardBerita extends HTMLElement {
     }
 
     render(){
-        config._apiURl = '/berita'
-        config.api.then( res => {
-            this.innerHTML = `<div class="border-atas">
+
+        this.innerHTML = `<div class="border-atas">
                                     <div class="row">
                                         <div class="col s12 m12 l12 lg12">
                                             <div class="title-top-center">
@@ -18,6 +17,9 @@ class cardBerita extends HTMLElement {
                                     </div>
                                     <berita-card-content data-get="3"></berita-card-content>
                                 </div>`
+        config._apiURl = '/berita'
+        
+        config.api.then( res => {
             const berita_card_content = this.querySelector('berita-card-content')
             berita_card_content.data_news = res
         }).catch( err => {            
