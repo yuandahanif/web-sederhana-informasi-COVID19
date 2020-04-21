@@ -2,7 +2,7 @@ const path = require('path')
 const webpack = require("webpack")
 const htmlWebpackPlugin = require("html-webpack-plugin")
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
+
 
 module.exports = {
     mode: 'development',
@@ -92,21 +92,30 @@ module.exports = {
                 test: /\.html$/i,
                 loader: 'html-loader',
             },
-            {
+            { //! images file 
                 test: /\.(jpe?g|png|gif|svg)$/i,
                 loader: "file-loader",
+                exclude : [path.resolve(__dirname, 'src/images/leaflet')],
                 options: {
-                    name: '[path][contenthash].[ext]',
+                    name: 'images/[contenthash].[ext]',
                   },
             },
-            {
+            { //! images file in node_module (leaflet)
+                test: /\.(jpe?g|png|gif|svg)$/i,
+                include : [path.resolve(__dirname, 'src/images/leaflet')],
+                loader: "file-loader",
+                options: {
+                    name: 'images/leaflet/[name].[ext]',
+                  },
+            },
+            { //! html file loader
                 test: /\.(html)$/i,
                 loader: "file-loader",
                 include: [
                     path.resolve(__dirname, 'src/page')
                 ],
                 options: {
-                    name: '[path][name].[ext]',
+                    name: '/page/Shell App/[name].[ext]',
                   },
             },
             // {
@@ -127,7 +136,6 @@ module.exports = {
             "window.$": "jquery",
             "window.jQuery": "jquery"
         }),
-        new webpack.optimize.ModuleConcatenationPlugin(),
-        new BundleAnalyzerPlugin()
+        new webpack.optimize.ModuleConcatenationPlugin()
     ]
 };

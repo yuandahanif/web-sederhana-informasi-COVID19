@@ -29,8 +29,8 @@ class mapPersebaran extends HTMLElement {
         // $ icon dan popoup untuk map
         this.popup = L.popup();
         this.coronaIcon = L.icon({
-            iconUrl: './images/virus-2.png',
-            shadowUrl: './images/virus-shadow-2.1.png',
+            iconUrl: './images/leaflet/virus-2.png',
+            shadowUrl: './images/leaflet/virus-shadow-2.1.png',
 
             iconSize:     [35, 75], // size of the icon
             shadowSize:   [50, 54], // size of the shadow

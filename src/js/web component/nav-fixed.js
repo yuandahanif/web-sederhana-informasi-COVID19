@@ -38,7 +38,7 @@ class navFixed extends HTMLElement {
     }
     async getNavLink(){
         try {
-            let nav = await fetch(`${window.location.origin}/src/page/Shell App/nav.html`)
+            let nav = await fetch(`/page/Shell App/nav.html`)
             return await nav.text();
         } catch (error) {
             return `<li><a href="#" onClick="location.reload();" >Muat ulang Halaman</a></li>`
