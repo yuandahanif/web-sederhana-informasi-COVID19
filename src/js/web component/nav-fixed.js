@@ -1,14 +1,17 @@
 import config from './config.js'
 class navFixed extends HTMLElement {
     async connectedCallback(){
+
         try {
             this.navLink = await this.getNavLink()
             this.render()
             config.underConstructPage()
+            $('.sidenav').sidenav();
         } catch (error) {
             this.navLink = error
             this.render()
         }
+
     }
 
     render(){

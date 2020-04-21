@@ -1,7 +1,6 @@
 (function($){
   $(function(){
     // page loader
-    $('.sidenav').sidenav();
     $('.parallax').parallax();
     $('.materialboxed').materialbox();
     $('.tooltipped').tooltip();

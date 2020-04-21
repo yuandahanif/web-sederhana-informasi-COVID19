@@ -1,4 +1,5 @@
 import kawalKorona from '../api/kawalKorona.js'
+import Swal from '../sweetalert2.all.min.js'
 const config = {
     set _apiURl(url){
         this.url = url

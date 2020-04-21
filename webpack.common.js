@@ -1,38 +1,133 @@
-const path = require('path');
+const path = require('path')
+const webpack = require("webpack")
 const htmlWebpackPlugin = require("html-webpack-plugin")
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
 module.exports = {
     mode: 'development',
-    entry: path.join(__dirname, 'src', 'app'),
-    output : {
-        path : path.resolve(__dirname,'dist'),
-        filename : "bundle.js"
+    entry: path.join(__dirname, 'src/js', 'index'),
+    output: {
+        path: path.resolve(__dirname, 'dist'),
+        filename: "bundle.js"
     },
+    resolve: {
+        alias: {
+            "./images/layers.png$": path.resolve(
+                __dirname,
+                "./node_modules/leaflet/dist/images/layers.png"
+            ),
+            "./images/layers-2x.png$": path.resolve(
+                __dirname,
+                "./node_modules/leaflet/dist/images/layers-2x.png"
+            ),
+            "./images/marker-icon.png$": path.resolve(
+                __dirname,
+                "./node_modules/leaflet/dist/images/marker-icon.png"
+            ),
+            "./images/marker-icon-2x.png$": path.resolve(
+                __dirname,
+                "./node_modules/leaflet/dist/images/marker-icon-2x.png"
+            ),
+            "./images/marker-shadow.png$": path.resolve(
+                __dirname,
+                "./node_modules/leaflet/dist/images/marker-shadow.png"
+            )
+        }
+    },
+
     module: {
         rules: [
-            {
-            test: /\.css/,
-            include: [
-                path.resolve(__dirname, 'src/styles')
-            ],
-            exclude: [
-                path.resolve(__dirname, 'node_modules')
-            ],
-            use: [{
-                    loader: 'style-loader'
-                },
-                {
-                    loader: 'css-loader'
+            { // ! font Css loader
+                test: /\.(sa|sc|c)ss$/,
+                include: [path.resolve(__dirname, 'src/font')],
+                exclude: [
+                    path.resolve(__dirname, 'node_modules')
+                ],
+                use: ["style-loader", "css-loader", "sass-loader"]
+            },
+            { // ! font File loader
+                test: /\.(woff|woff2|eot|ttf|svg)$/,
+                exclude: [
+                    path.resolve(__dirname, 'node_modules'),
+                    path.resolve(__dirname, 'api'),
+                    path.resolve(__dirname, 'api-v2'),
+                    path.resolve(__dirname, 'src/images')
+                ],
+                loader: 'url-loader?limit=100000',
+                options: {
+                    name: '[name].[ext]',
+                    outputPath: 'fonts/'
                 }
-            ]
-
-        }
-    ]
+            },
+            { // ! untuk leaflet
+                test: /\leaflet.css$/,
+                use: [{
+                        loader: "style-loader"
+                    },
+                    {
+                        loader: "css-loader"
+                    }
+                ]
+            },
+            { // ! css loader
+                test: /\.css$/,
+                exclude: [
+                    /\leaflet.css$/,
+                    path.resolve(__dirname, 'src/font'),
+                    // path.resolve(__dirname, 'node_modules')
+                ],
+                use: [{
+                        loader: "style-loader"
+                    },
+                    {
+                        loader: "css-loader",
+                        // options: {
+                        //     modules: true
+                        // }
+                    }
+                ]
+            },
+            {
+                test: /\.html$/i,
+                loader: 'html-loader',
+            },
+            {
+                test: /\.(jpe?g|png|gif|svg)$/i,
+                loader: "file-loader",
+                options: {
+                    name: '[path][contenthash].[ext]',
+                  },
+            },
+            {
+                test: /\.(html)$/i,
+                loader: "file-loader",
+                include: [
+                    path.resolve(__dirname, 'src/page')
+                ],
+                options: {
+                    name: '[path][name].[ext]',
+                  },
+            },
+            // {
+            //     test: /\.svg$/,
+            //     loader: 'svg-inline-loader'
+            // }
+        ]
     },
-    plugins : [
+    plugins: [
+        new CleanWebpackPlugin(),
         new htmlWebpackPlugin({
-            template:'./src/template.html',
-            filename:'index.html'
-        })
+            template: './src/index.html',
+            filename: 'index.html'
+        }),
+        new webpack.ProvidePlugin({
+            $: "jquery",
+            jQuery: "jquery",
+            "window.$": "jquery",
+            "window.jQuery": "jquery"
+        }),
+        new webpack.optimize.ModuleConcatenationPlugin(),
+        new BundleAnalyzerPlugin()
     ]
 };
