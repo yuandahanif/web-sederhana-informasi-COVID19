@@ -4,7 +4,7 @@ web ini dibuat untuk submission kelas -   [Belajar Fundamental Front-End Web Dev
 
 |  |  |
 |--|--|
-| ![Tampilan data berhasil di load](src\images\FireShot Capture 001 - Informasi COVID-19 Indonesia - 127.0.0.1.png) | ![Tampilan saat data gagal di load](src\images\FireShot Capture 002 - Informasi COVID-19 Indonesia - 127.0.0.1.png) |
+| ![Tampilan data berhasil di load](https://raw.githubusercontent.com/yuandahanif/web-sederhana-informasi-COVID19/master/src/images/FireShot%20Capture%20001%20-%20Informasi%20COVID-19%20Indonesia%20-%20127.0.0.1.png) | ![Tampilan saat data gagal di load](https://raw.githubusercontent.com/yuandahanif/web-sederhana-informasi-COVID19/master/src/images/FireShot%20Capture%20002%20-%20Informasi%20COVID-19%20Indonesia%20-%20127.0.0.1.png) |
 |||
 
 Fitur yang terdapad di dalam web ini antaralain:
