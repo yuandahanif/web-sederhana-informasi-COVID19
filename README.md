@@ -34,6 +34,7 @@ Fitur yang terdapad di dalam web ini antaralain:
 ### Dibangun dengan:
  - [Materialize](http://materializecss.com/) CSS Framework
  - maps [leaflet](https://leafletjs.com/)
+ - [sweetalert2](https://sweetalert2.github.io/)
  - Fhoto oleh [Tedward Quinn](https://unsplash.com/@antaresqsq) dari Unsplash
  ### Sumber Data:
  - Data COVID-19 per Provinsi oleh [KawalKorona](https://kawalcorona.com/api/)
