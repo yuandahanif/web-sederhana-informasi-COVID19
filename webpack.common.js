@@ -92,7 +92,7 @@ module.exports = {
                 test: /\.html$/i,
                 loader: 'html-loader',
             },
-            { //! images file 
+            { //! images file loader
                 test: /\.(jpe?g|png|gif|svg)$/i,
                 loader: "file-loader",
                 exclude : [path.resolve(__dirname, 'src/images/leaflet')],
@@ -100,7 +100,7 @@ module.exports = {
                     name: 'images/[contenthash].[ext]',
                   },
             },
-            { //! images file in node_module (leaflet)
+            { //! images file loader  (leaflet)
                 test: /\.(jpe?g|png|gif|svg)$/i,
                 include : [path.resolve(__dirname, 'src/images/leaflet')],
                 loader: "file-loader",

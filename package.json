@@ -4,8 +4,8 @@
   "description": "web informasi tentang status covid di indonesia.",
   "main": "index.js",
   "scripts": {
-    "backend_demon": "nodemon ./server.js localhost 3000",
-    "frontend_maid": "http-server dist",
+    "b_server": "nodemon ./server.js localhost 3000",
+    "f_server": "http-server dist",
     "build": "webpack --config webpack.prod.js",
     "start-dev": "webpack-dev-server --config webpack.dev.js",
     "test": "echo \"Error: no test specified\" && exit 1"

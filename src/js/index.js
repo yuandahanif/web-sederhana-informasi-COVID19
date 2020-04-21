@@ -19,5 +19,6 @@ import './init.js'
 
 // file loader
 import '../page/Shell App/nav.html'
-import '../images/leaflet//virus-2.png'
-import '../images/leaflet//virus-shadow-2.1.png'
+import '../images/leaflet/virus-shadow-2.1.png'
+import '../images/leaflet/virus-2.png'
+import '../images/leaflet/142.jpg'

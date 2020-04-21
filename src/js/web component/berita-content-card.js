@@ -50,7 +50,7 @@ class cardBeritaContent extends HTMLElement {
             }
 
             img.onerror = () => {
-                img.src = './images/142.jpg'
+                img.src = './images/leaflet/142.jpg'
             }
         })
     }
@@ -69,7 +69,6 @@ class cardBeritaContent extends HTMLElement {
                                 </div>
                             </div>`
         }
-        
     }
 }
 customElements.define('berita-card-content',cardBeritaContent)
